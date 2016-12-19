@@ -5,6 +5,7 @@
     <title>MD5</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/bulma.css" media="screen" title="no title">
+    <link rel="stylesheet" href="./css/fade.css" media="screen" title="no title">
     <script src="./js/smooth-scroll.js"></script>
   </head>
   <body class="is-bold">
@@ -23,7 +24,7 @@
           <div class="nav-right">
             <a data-scroll href="#mission" class="nav-item" alt="Link to mission statement">Mission</a>
             <a data-scroll href="#programs" class="nav-item" alt="Link to programs overview">Programs</a>
-            <a href="" class="nav-item" alt="Link to articles on the blog">Articles</a>
+            <a href="/articles" class="nav-item" alt="Link to articles on the blog">Articles</a>
             <span class="nav-item">
               <a data-scroll href="#contact" class="button" alt="Link to contact form">Contact</a>
             </span>
@@ -96,7 +97,7 @@
                 </p>
               </div>
               <p class="subtitle has-text-centered">
-                <a class="subtitle plain-link" href="#literacy-outline">View Course Outline</a>
+                <a class="subtitle plain-link inTrigger" href="#literacy-outline">View Course Outline</a>
               </p>
             </div>
           </div>
@@ -136,7 +137,31 @@
                 </p>
               </div>
               <p class="subtitle has-text-centered">
-                <a class="subtitle plain-link" href="#seminar-modules">Free estimate</a>
+                <a class="subtitle plain-link" href="#contact">Free estimate</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="columns fadeTarget fadeIn hide is-paused">
+          <div class="column is-12">
+            <div class="box">
+              <p class="title has-text-centered">
+                Good job buddy
+                <span class="is-pulled-right outTrigger">XXX</span>
+              </p>
+              <div class="content">
+                <p class="subtitle has-text-centered">
+                  Small businesses, libraries, public institutions, teachers and classrooms
+                </p>
+                <p>
+                  2 hour crash course in all things relevant to digital literacy. Begins with the question of "What's a computer anyway?" and culminates with strategies for addressing the threats facing modern web users.
+                </p>
+                <p>
+                  Designed to answer all the most fundamental questions around how the internet works and what it means to be safe online.
+                </p>
+              </div>
+              <p class="subtitle has-text-centered">
+                <a class="subtitle plain-link inTrigger" href="#literacy-outline">View Course Outline</a>
               </p>
             </div>
           </div>
@@ -189,9 +214,11 @@
                   <label class="label">Details</label>
                 </div>
                 <div class="control">
-                  <textarea class="textarea" placeholder="Organization name, location, scheduling and questions"></textarea>
+                  <textarea name="message" class="textarea" placeholder="Organization name, location, scheduling and questions"></textarea>
                 </div>
               </div>
+              <input type="hidden" name="_next" value="/thanks.html" />
+              <input type="hidden" name="_subject" value="MD5 Contact" />
               <div class="columns">
                 <div class="column is-one-quarter is-offset-9">
                   <p class="control is-horizontal">
@@ -210,6 +237,28 @@
     </section>
     <script type="text/javascript">
       smoothScroll.init();
+
+      var inTrigger = document.querySelector('.inTrigger');
+      var outTrigger = document.querySelector('.outTrigger');
+      var fadeTarget = document.querySelector('.fadeTarget');
+
+      inTrigger.addEventListener('click', function(e){
+        if (fadeTarget.classList.contains('fadeIn')){
+          fadeTarget.classList.remove('hide');
+          fadeTarget.classList.remove('is-paused');
+          setTimeout(function(){
+            fadeTarget.classList.add('is-paused', 'fadeOut')
+            fadeTarget.classList.remove('fadeIn');
+          }, 600)
+        }
+      });
+      outTrigger.addEventListener('click', function(e){
+        fadeTarget.classList.remove('is-paused');
+        setTimeout(function(){
+          fadeTarget.classList.add('hide', 'fadeIn');
+          fadeTarget.classList.remove('fadeOut');
+        }, 600)
+      })
     </script>
   </body>
 </html>
