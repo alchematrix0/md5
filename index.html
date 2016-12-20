@@ -97,7 +97,7 @@
                 </p>
               </div>
               <p class="subtitle has-text-centered">
-                <a class="subtitle plain-link inTrigger" href="#literacy-outline">View Course Outline</a>
+                <a class="subtitle plain-link inTriggerLit" href="#literacy-outline">View Course Outline</a>
               </p>
             </div>
           </div>
@@ -117,7 +117,7 @@
                 </p>
               </div>
               <p class="subtitle has-text-centered">
-                <a class="subtitle plain-link" href="#seminar-modules">View Modules</a>
+                <a class="subtitle plain-link inTriggerEnc" href="#seminar-modules">View Modules</a>
               </p>
             </div>
           </div>
@@ -142,26 +142,96 @@
             </div>
           </div>
         </div>
-        <div class="columns fadeTarget fadeIn hide is-paused">
+        <div class="columns fadeTargetLit fadeIn hide is-paused">
           <div class="column is-12">
             <div class="box">
               <p class="title has-text-centered">
-                Good job buddy
-                <span class="is-pulled-right outTrigger">XXX</span>
+                Digital Literacy Primer
+                <span class="is-pulled-right outTriggerLit">X</span>
               </p>
               <div class="content">
-                <p class="subtitle has-text-centered">
-                  Small businesses, libraries, public institutions, teachers and classrooms
+                <p>
+                  <b>Introduction: from boot to cypher (20 mins)</b>
                 </p>
                 <p>
-                  2 hour crash course in all things relevant to digital literacy. Begins with the question of "What's a computer anyway?" and culminates with strategies for addressing the threats facing modern web users.
+                	What's a computer anyway?  hardware, firmware, software
+                	Information: the stuff of the universe
+                	Privacy: Intersection of Availability, Confidentiality, Authenticity and Integrity
+                	Activity: Sending a private message challenge
+                	Introduction to Cryptography: what is public key cryptography?
                 </p>
                 <p>
-                  Designed to answer all the most fundamental questions around how the internet works and what it means to be safe online.
+                  <b>Pragmatic Concepts: threats to your digital self (45 mins)</b>
+                </p>
+                <p>
+                	How the internet works: servers, URLs, IPs oh my
+                	SSL: the web's safety blanket
+          	      Basics: passwords, emails and malware
+            	    Preventative Medicine: what you can do to stay safe from:
+              		Viruses: demystified
+              		Hackers: who what where how and why!
+              		Top 5: Backup, firewall, update, anti-virus and education
+              		Web Browsers: ins and outs of the modern oculus
+            	    Handling Problems: what to do when it all goes wrong
+                </p>
+                <p>
+                  <b>Questions and participant lead session (20-30 min)</b>
                 </p>
               </div>
               <p class="subtitle has-text-centered">
-                <a class="subtitle plain-link inTrigger" href="#literacy-outline">View Course Outline</a>
+                <a href="/files/DigitalLiteracyOutline.pdf" type="download">Download</a> full version w/ readings
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="columns fadeTargetEnc fadeIn hide is-paused">
+          <div class="column is-12">
+            <div class="box">
+              <p class="title has-text-centered">
+                The Encrypted Life
+                <span class="is-pulled-right outTriggerEnc">X</span>
+              </p>
+              <p class="subtitle has-text-centered" style="margine-bottom: 1em;">
+                Composable modules: choose your own adventure
+              </p>
+              <div class="content">
+                <div class="tiles">
+                  <div class="tile">
+                    <p>
+                      Encrypting communications
+                    </p>
+                    <p>
+                      Be it email, texting, voice calls or file sharing, learn how to encrypt every aspect of your digitial communications. This module works on any device you might be carrying and transforms it from a spyphone to your personal portal into the matrix.
+                    </p>
+                  </div>
+                  <div class="tile">
+                    <p>
+                      IP addresses: manipulating and securing
+                    </p>
+                    <p>
+                      How you connect to the internet says a lot about you. Demystify the concepts behind location tracking and over the wire spying and leave those narks, hackers and snoops in the dusty dark.
+                    </p>
+                  </div>
+                  <div class="tile">
+                    <p>
+                      Tails: the amnesic incognito live system
+                    </p>
+                    <p>
+                      When only the most secure configuration will suffice. This two hour workshop will take you from wondering "What's an OS again?" to a bad ass computer on a stick toting digital ninja.
+                    </p>
+                  </div>
+                  <div class="tile">
+                    <p>
+                      The future is here
+                    </p>
+                    <p>
+                      Our most customizable module is a 2 hour voyage into the future of possible. Learn about anything from Bitcoin, the blockchain and the DarkWeb to how to use a 3D printer. From how to fly a drone to how to monitor your at home wifi network and on to building your own server and using a microcomputer. Skynet's the limit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p class="subtitle has-text-centered">
+                <a href="/files/PGPemailprimer.docx" type="download">Download</a> free "Intro to PGP email" guide
               </p>
             </div>
           </div>
@@ -237,26 +307,46 @@
     </section>
     <script type="text/javascript">
       smoothScroll.init();
-
-      var inTrigger = document.querySelector('.inTrigger');
-      var outTrigger = document.querySelector('.outTrigger');
-      var fadeTarget = document.querySelector('.fadeTarget');
-
-      inTrigger.addEventListener('click', function(e){
-        if (fadeTarget.classList.contains('fadeIn')){
-          fadeTarget.classList.remove('hide');
-          fadeTarget.classList.remove('is-paused');
+      // hide and show triggers for literacy
+      var inTriggerLit = document.querySelector('.inTriggerLit');
+      var outTriggerLit = document.querySelector('.outTriggerLit');
+      var fadeTargetLit = document.querySelector('.fadeTargetLit');
+      inTriggerLit.addEventListener('click', function(e){
+        if (fadeTargetLit.classList.contains('fadeIn')){
+          fadeTargetLit.classList.remove('hide');
+          fadeTargetLit.classList.remove('is-paused');
           setTimeout(function(){
-            fadeTarget.classList.add('is-paused', 'fadeOut')
-            fadeTarget.classList.remove('fadeIn');
+            fadeTargetLit.classList.add('is-paused', 'fadeOut')
+            fadeTargetLit.classList.remove('fadeIn');
           }, 600)
         }
       });
-      outTrigger.addEventListener('click', function(e){
-        fadeTarget.classList.remove('is-paused');
+      outTriggerLit.addEventListener('click', function(e){
+        fadeTargetLit.classList.remove('is-paused');
         setTimeout(function(){
-          fadeTarget.classList.add('hide', 'fadeIn');
-          fadeTarget.classList.remove('fadeOut');
+          fadeTargetLit.classList.add('hide', 'fadeIn');
+          fadeTargetLit.classList.remove('fadeOut');
+        }, 600)
+      })
+      // hide and show triggers for encrypted life
+      var inTriggerEnc = document.querySelector('.inTriggerEnc');
+      var outTriggerEnc = document.querySelector('.outTriggerEnc');
+      var fadeTargetEnc = document.querySelector('.fadeTargetEnc');
+      inTriggerEnc.addEventListener('click', function(e){
+        if (fadeTargetEnc.classList.contains('fadeIn')){
+          fadeTargetEnc.classList.remove('hide');
+          fadeTargetEnc.classList.remove('is-paused');
+          setTimeout(function(){
+            fadeTargetEnc.classList.add('is-paused', 'fadeOut')
+            fadeTargetEnc.classList.remove('fadeIn');
+          }, 600)
+        }
+      });
+      outTriggerEnc.addEventListener('click', function(e){
+        fadeTargetEnc.classList.remove('is-paused');
+        setTimeout(function(){
+          fadeTargetEnc.classList.add('hide', 'fadeIn');
+          fadeTargetEnc.classList.remove('fadeOut');
         }, 600)
       })
     </script>
