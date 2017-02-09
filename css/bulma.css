@@ -139,8 +139,8 @@ body {
 
 body.is-bold {
   background: url("../img/toile-nogradient.png"), url("../img/toile-upwards.png"), linear-gradient(141deg, #dfd8d8 0%, whitesmoke 71%, white 100%);
-  background-size: 40vw, 40vw, cover;
-  background-position: 86.5% 1.95%, left bottom;
+  background-size: 36vw, 36vw, cover;
+  background-position: 87.2% 1.75%, left bottom;
   background-repeat: no-repeat, no-repeat;
 }
 
