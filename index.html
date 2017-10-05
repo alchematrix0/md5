@@ -23,7 +23,7 @@
           </div>
           <div class="nav-right">
             <a data-scroll href="#programs" class="nav-item" alt="Link to programs overview">Programs</a>
-            <a data-scroll href="./store.html" class="nav-item" alt="Link to store">Store</a>
+            <!-- <a data-scroll href="./store.html" class="nav-item" alt="Link to store">Store</a> -->
             <a href="https://medium.com/@md5.press" class="nav-item" alt="Link to Articles on Medium">
               Blog
             </a>
@@ -68,7 +68,7 @@
         <div class="columns">
           <div class="column is-10 is-offset-1">
             <h4 class="subtitle mission">
-              Ready to <b>empower</b> your organization?
+              Ready to <b>become a web ninja</b>?
             </h4>
             <h4 class="subtitle mission">
               Find the program that's right for your team, <a data-scroll href="#contact" alt="Contact form" class="plain-link">get in touch</a> and join <em>the most important conversation</em> of the 21st century.
@@ -97,10 +97,10 @@
                   Small businesses, libraries, public institutions, teachers and classrooms
                 </p>
                 <p>
-                  2 hour crash course in all things relevant to digital literacy. Begins with the question "What's a computer anyway?" and culminates with strategies for addressing the threats facing modern web users.
+                  2 hour crash course in all things relevant to digital literacy. Begins with the question "What's a computer anyway?" and culminates with practical strategies for disarming the threats facing modern web users.
                 </p>
                 <p>
-                  Designed to answer all the most fundamental questions around how the internet works and how to empower with the tools and knowledge required to stay safe online.
+                  Designed to answer all the most fundamental questions around how the internet works and how to empower individuals and collectives with the tools and knowledge required to stay safe online.
                 </p>
               </div>
               <p class="subtitle has-text-centered">
@@ -333,52 +333,6 @@
         </div>
       </div>
     </section>
-    <script type="text/javascript">
-      smoothScroll.init();
-      // hide and show triggers for literacy
-      var inTriggerLit = document.querySelector('.inTriggerLit');
-      var outTriggerLit = document.querySelector('.outTriggerLit');
-      var fadeTargetLit = document.querySelector('.fadeTargetLit');
-      inTriggerLit.addEventListener('click', function(e){
-        if (document.querySelector('.outTriggerEnc')){document.querySelector('.outTriggerEnc').click()}
-        if (fadeTargetLit.classList.contains('fadeIn')){
-          fadeTargetLit.classList.remove('hide');
-          fadeTargetLit.classList.remove('is-paused');
-          setTimeout(function(){
-            fadeTargetLit.classList.add('is-paused', 'fadeOut')
-            fadeTargetLit.classList.remove('fadeIn');
-          }, 600)
-        }
-      });
-      outTriggerLit.addEventListener('click', function(e){
-        fadeTargetLit.classList.remove('is-paused');
-        setTimeout(function(){
-          fadeTargetLit.classList.add('hide', 'fadeIn');
-          fadeTargetLit.classList.remove('fadeOut');
-        }, 600)
-      })
-      // hide and show triggers for encrypted life
-      var inTriggerEnc = document.querySelector('.inTriggerEnc');
-      var outTriggerEnc = document.querySelector('.outTriggerEnc');
-      var fadeTargetEnc = document.querySelector('.fadeTargetEnc');
-      inTriggerEnc.addEventListener('click', function(e){
-        if (document.querySelector('.outTriggerLit')){document.querySelector('.outTriggerLit').click()}
-        if (fadeTargetEnc.classList.contains('fadeIn')){
-          fadeTargetEnc.classList.remove('hide');
-          fadeTargetEnc.classList.remove('is-paused');
-          setTimeout(function(){
-            fadeTargetEnc.classList.add('is-paused', 'fadeOut')
-            fadeTargetEnc.classList.remove('fadeIn');
-          }, 600)
-        }
-      });
-      outTriggerEnc.addEventListener('click', function(e){
-        fadeTargetEnc.classList.remove('is-paused');
-        setTimeout(function(){
-          fadeTargetEnc.classList.add('hide', 'fadeIn');
-          fadeTargetEnc.classList.remove('fadeOut');
-        }, 600)
-      })
-    </script>
+    <script type="text/javascript" src="./js/fades.js"></script>
   </body>
 </html>
