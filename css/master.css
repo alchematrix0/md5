@@ -1,0 +1,23 @@
+header.nav.container {
+  max-width: 100vw;
+}
+header.nav.container .nav-left {
+  padding-left: 1em;
+}
+header.nav.container .nav-right {
+  padding-right: 1em;
+}
+body.is-bold {
+  background: url("../img/toile-upwards.png"), linear-gradient(141deg, #dfd8d8 0%, whitesmoke 71%, white 100%);
+  background-size: 36vw, cover;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 900px) {
+  body.is-bold {
+    background: url("../img/toile-nogradient.png"), url("../img/toile-upwards.png"), linear-gradient(141deg, #dfd8d8 0%, whitesmoke 71%, white 100%);
+    background-size: 36vw, 36vw, cover;
+    background-position: 100% 1%, left bottom;
+    background-repeat: no-repeat, no-repeat;
+  }
+}

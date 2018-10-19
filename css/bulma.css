@@ -137,13 +137,6 @@ body {
   line-height: 1.428571428571429;
 }
 
-body.is-bold {
-  background: url("../img/toile-nogradient.png"), url("../img/toile-upwards.png"), linear-gradient(141deg, #dfd8d8 0%, whitesmoke 71%, white 100%);
-  background-size: 36vw, 36vw, cover;
-  background-position: 87.2% 1.75%, left bottom;
-  background-repeat: no-repeat, no-repeat;
-}
-
 a {
   color: #00d1b2;
   cursor: pointer;
